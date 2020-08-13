@@ -1,0 +1,11 @@
+CREATE DATABASE u3203616_Database;
+
+use u3203616_Database;
+
+CREATE TABLE works (
+	userid INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+	unitname VARCHAR(30) NOT NULL,
+	duedate VARCHAR(50) NOT NULL,
+	assignmentname VARCHAR(30),
+	date TIMESTAMP
+);
