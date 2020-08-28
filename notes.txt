@@ -1,0 +1,8 @@
+1. Did not want every option on each page, wanted to only be able to click 'home'
+2. Move config.php out of same directory
+3. Do CSS for all; e.g blue home page buttons, new heading for each older page, centreing
+4. Make register page run straight to welcome page instead pf through login
+5. submit the folder bewd assign 1 and sg link and rationale pdf
+6. Create 1 week notification
+7. Modal created today
+8. I need to add more functionality and styling
