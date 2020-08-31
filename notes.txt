@@ -6,3 +6,14 @@
 6. Create 1 week notification
 7. Modal created today
 8. I need to add more functionality and styling
+9. Add proper table for 'create.php'
+10. Remove constant modal popup
+11. Create functioning calendar
+12. Add more assignment tracking options
+13. Check Frameworks
+14. How do you view database
+
+
+
+sgp100.siteground.asia
+Martin M.: And password to: Eq3_@76Fv)h#

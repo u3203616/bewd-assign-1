@@ -54,7 +54,9 @@ if( !isset($_SESSION["loggedin"] ) || $_SESSION["loggedin"] !== true){
         <br><a href="update.php" class= "btn btn-info">Edit an Assignment</a>
         <br>
         <br><a href="delete.php" class= "btn btn-info">Delete an Assignment</a>
-        <br>    
+        <br> 
+    <br><a href ="calendar.php" class= "btn btn-info">Calendar</a>
+    
              
    <html lang="en">
 <head>
@@ -70,10 +72,15 @@ if( !isset($_SESSION["loggedin"] ) || $_SESSION["loggedin"] !== true){
 <div class="container">
   
     <script type="text/javascript">
+        var count=0;
     $(window).on('load',function(){
+        if (count=== 0){
+            count= 1;
         $('#myModal').modal('show');
-
+        }
+        
     });
+        
         
 </script>
 
@@ -108,4 +115,5 @@ if( !isset($_SESSION["loggedin"] ) || $_SESSION["loggedin"] !== true){
 </html>
 
 
+    
 <?php include "templates/footer.php"; ?>
