@@ -81,7 +81,7 @@
 <?php include "templates/header.php"; ?>
 
 <?php if (isset($_POST['submit']) && $statement) : ?>
-	<p>Work Successfully Updated!</p>
+	<p><br><span class= "alert alert-success" role="alert">Assignment Updated Successfully!</span></p>
 <?php endif; ?>
 
 <h2>Edit a work</h2>

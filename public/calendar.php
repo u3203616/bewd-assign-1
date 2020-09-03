@@ -236,47 +236,9 @@ for ( $day = 1; $day <= $day_count; $day++, $str++) {
 </html>
 
 
-Pascal Parent
-2 months ago
-I've done something to add some events
-You need only to add elements you want between the <td></td> tag with a result from a database like this (like a ul li):
-
-
-for ( $day = 1; $day <= $day_count; $day++, $str++) {
-
-		$date = $ym . '-' . $day;
-
-		$req = $bdd->query('SELECT * FROM evenements WHERE MONTH(`date`) = '.date("m",$timestamp).' AND YEAR(`date`) = '.date("Y",$timestamp).' AND DAY(`date`)='.$day.' AND estActif = 1 AND idUtilisateur = '.$_SESSION['calId'].' ORDER BY `date`');
-		$res = $req->fetchAll(\PDO::FETCH_ASSOC);
-		$eventsReq="";
-		for ($i=0; $i < count($res); $i++) { 
-			$eventsReq .= "<li class=\"event\" id=\"e_".$day."_".($i+1)."\" onclick=\"eventClick('e_".$day."_".($i+1)."','".$day."', event)\">".$res[$i]["text"]."</li>";
-		}
 
 
 
-		if ($today == $date) {
-			$week .= '<td onclick="dateClick('.$day.', event)" class="today" id="'.$day.'"><span class="textJour">' . $day;
-		} else {
-			$week .= '<td onclick="dateClick('.$day.', event)" id="'.$day.'"><span class="textJour">' . $day;
-		}
-		$week .= '</span><br><ul class="contenuJour">'.$eventsReq.'</ul><input class="ajouterEventInput" id="ajouterJour'.$day.'" type=\"text\" style="color:black;position:relative;display:block;visibility:hidden;" placeholder="Nouvel évènement"></input></td>';
-
-    // End of the week OR End of the month
-		if ($str % 7 == 6 || $day == $day_count) {
-
-			if ($day == $day_count) {
-            // Add empty cell
-				$week .= str_repeat('<td></td>', 6 - ($str % 7));
-			}
-
-			$weeks[] = '<tr>' . $week . '</tr>';
-
-        // Prepare for new week
-			$week = '';
-		}
-
-	}
 
 
 

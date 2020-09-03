@@ -6,6 +6,8 @@ if (isset($_POST['submit'])) {
     // include the config file that we created before
     require "config.php"; 
     
+    
+    
     // this is called a try/catch statement 
 	try {
         // FIRST: Connect to the database
@@ -38,30 +40,80 @@ if (isset($_POST['submit'])) {
 <?php include "templates/header.php"; ?>
 
 
-<h2>Track An Assignment</h2>
+
 
 <?php if (isset($_POST['submit']) && $statement) { ?>
 
-<p>Assignment Tracked Successfully!</p>
+<p><br><span class= "alert alert-success" class="glyphicon glyphicon-ok" role="alert">Assignment Tracked Successfully! <span class="glyphicon glyphicon-ok" </span></p>
+
+<br>
 
 <?php } ?>
 
-<!--form to collect data for each artwork-->
 
-<form method="post">
+
+
+
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+<fieldset>
+
+<!-- Form Name -->
+<legend><center><h2><b>Track Assignment</b></h2></center></legend><br>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Unit Name</label>  
     
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  id="unitname" name="unitname" placeholder="Unit Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Assignment Name</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input id="assignmentname" name="assignmentname" placeholder="Assignment Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+  
+  
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Due Date</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+  <input  id="duedate" name="duedate" placeholder="Due Date" class="form-control"  type="date">
+    </div>
+  </div>
+</div>
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
     
-    <br><label for="unitname">Unit Name:</label> 
-    <input type="text" name="unitname" id="unitname"> 
-        
-    <br><label for="duedate">Due Date:</label> 
-    <input type="text" name="duedate" id="duedate"> 
-    
-    <br><label for="assignmentname">Assignment Name:</label>   
-    <input type="text" name="assignmentname" id="assignmentname"> 
-    
-    <br><input type="submit" name="submit" value="Track Item">
-        
+  <div class="col-md-4"><br>
+    <button type="submit" name="submit" class="btn btn-success" >Add Item  <span class="glyphicon glyphicon-plus"></span></button>
+  </div>
+</div>
+
+</fieldset>
 </form>
+</div>
+    <!-- /.container -->
 
 <?php include "templates/footer.php"; ?>

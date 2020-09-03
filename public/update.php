@@ -42,7 +42,7 @@
     <?php echo $row['duedate']; ?><br> Assignment Name:
     <?php echo $row['assignmentname']; ?><br> 
 
-    <a href='update-work.php?id=<?php echo $row['id']; ?>'>Edit</a>
+    <br><a class="btn btn-warning"  href='update-work.php?id=<?php echo $row['id']; ?>'>Edit  <span class="glyphicon glyphicon-pencil"</span></a>
 </p>
 
 <hr>

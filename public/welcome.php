@@ -18,6 +18,13 @@ if( !isset($_SESSION["loggedin"] ) || $_SESSION["loggedin"] !== true){
 <!DOCTYPE html>
 
 
+<html lang="en">
+<head>
+<div class="jumbotron text-center" >
+ <h1><?php echo htmlspecialchars($_SESSION["username"]); ?>'s Assignment Tracker</h1>
+  <p>Track Your Assignments With Ease!</p> 
+</div>
+
 
 
 
@@ -38,24 +45,26 @@ if( !isset($_SESSION["loggedin"] ) || $_SESSION["loggedin"] !== true){
     
 
     <div class="page-header">
-        <h1><?php echo htmlspecialchars($_SESSION["username"]); ?>'s Assignment Tracker</h1>
+        
     </div>
     <p>
-        <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
-        <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+        <a href="reset-password.php" class="btn btn-warning">Reset Your Password <span class="glyphicon glyphicon-lock"</span></a>
+        <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-success" data-toggle="modal"  data-target="#myModal">Notifications <span class="glyphicon glyphicon-envelope"</span></button>
+        <a href="logout.php" class="btn btn-danger">Sign Out of Your Account <span class="glyphicon glyphicon-off"</span></a>
     </p>
     
     
         
-        <br><a href="create.php" class= "btn btn-info"> Add New Assignment</a>
+        <br><a href="create.php" class= "btn btn-info"> Add New Assignment <span class="glyphicon glyphicon-plus"></span></a>
         <br>
-        <br><a href="read.php" class= "btn btn-info">Tracked Assignments</a>
+        <br><a href="read.php" class= "btn btn-info">Tracked Assignments <span class="glyphicon glyphicon-eye-open"></span></a>
         <br>
-        <br><a href="update.php" class= "btn btn-info">Edit an Assignment</a>
+        <br><a href="update.php" class= "btn btn-info">Edit an Assignment <span class="glyphicon glyphicon-pencil"></span></a> 
         <br>
-        <br><a href="delete.php" class= "btn btn-info">Delete an Assignment</a>
+        <br><a href="delete.php" class= "btn btn-info">Delete an Assignment <span class="glyphicon glyphicon-trash"></span></a>
         <br> 
-    <br><a href ="calendar.php" class= "btn btn-info">Calendar</a>
+    <br><a href ="calendar.php" class= "btn btn-info">Calendar <span class="glyphicon glyphicon-calendar"></span></a>
     
              
    <html lang="en">
@@ -71,18 +80,10 @@ if( !isset($_SESSION["loggedin"] ) || $_SESSION["loggedin"] !== true){
 
 <div class="container">
   
-    <script type="text/javascript">
-        var count=0;
-    $(window).on('load',function(){
-        if (count=== 0){
-            count= 1;
-        $('#myModal').modal('show');
-        }
-        
-    });
+    
         
         
-</script>
+
 
 
   <!-- Modal -->
@@ -114,6 +115,7 @@ if( !isset($_SESSION["loggedin"] ) || $_SESSION["loggedin"] !== true){
 </body>
 </html>
 
+    
 
     
 <?php include "templates/footer.php"; ?>

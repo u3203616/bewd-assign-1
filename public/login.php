@@ -110,10 +110,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div>    
+            
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Password</label>
                 <input type="password" name="password" class="form-control">
                 <span class="help-block">
+                    <div class="form-group login-group-checkbox">
+						<input type="radio" class="" name="reg_gender" id="male" placeholder="username">
+						<label for="male">male</label>
+						
+						<input type="radio" class="" name="reg_gender" id="female" placeholder="username">
+						<label for="female">female</label>
+					</div>
                     <?php 
                         echo $password_err; 
                     ?>
@@ -127,8 +135,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
 </body>
 </html>
-
-
 
 
 

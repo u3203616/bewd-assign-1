@@ -14,6 +14,7 @@ if (isset($_POST['submit'])) {
         // SECOND: Create the SQL 
         $sql = "SELECT * FROM works";
         
+        
         // THIRD: Prepare the SQL
         $statement = $connection->prepare($sql);
         $statement->execute();
@@ -30,8 +31,10 @@ if (isset($_POST['submit'])) {
 
 <?php include "templates/header.php"; ?>
 
+
 <?php  
     if (isset($_POST['submit'])) {
+        
         //if there are some results
         if ($result && $statement->rowCount() > 0) { ?>
 <h2>Results</h2>
@@ -48,12 +51,14 @@ if (isset($_POST['submit'])) {
     <?php echo $row['assignmentname']; ?><br> 
 </p>
 <?php 
-            // this willoutput all the data from the array
-            //echo '<pre>'; var_dump($row); 
+                                
+            
         ?>
 
 <hr>
-<?php }; //close the foreach
+<?php }; 
+                                                    
+//close the foreach
         }; 
     }; 
 ?>
@@ -62,7 +67,7 @@ if (isset($_POST['submit'])) {
 
 <form method="post">
 
-    <input type="submit" name="submit" value="View Tracked Items">
+    <input type="submit" class="btn btn-success" name="submit" value="View Tracked Items" class="glyphicon glyphicon-eye-open">
 
 </form>
 
