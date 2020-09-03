@@ -116,11 +116,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="password" name="password" class="form-control">
                 <span class="help-block">
                     <div class="form-group login-group-checkbox">
-						<input type="radio" class="" name="reg_gender" id="male" placeholder="username">
-						<label for="male">male</label>
 						
-						<input type="radio" class="" name="reg_gender" id="female" placeholder="username">
-						<label for="female">female</label>
 					</div>
                     <?php 
                         echo $password_err; 

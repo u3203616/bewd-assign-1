@@ -1,9 +1,9 @@
 <?php
 
 $host       = "localhost";
-$username   = "root";
-$password   = "root";
-$dbname     = "conorf14_tracker"; 
+$username   = "conorf14_admin";
+$password   = ";7]$]1St3-@S";
+$dbname     = "conorf14_tasktrack"; 
 $dsn        = "mysql:host=$host;dbname=$dbname"; 
 $options    = array(
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION

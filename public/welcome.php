@@ -23,6 +23,7 @@ if( !isset($_SESSION["loggedin"] ) || $_SESSION["loggedin"] !== true){
 <div class="jumbotron text-center" >
  <h1><?php echo htmlspecialchars($_SESSION["username"]); ?>'s Assignment Tracker</h1>
   <p>Track Your Assignments With Ease!</p> 
+    <h5>Home Page</h5>
 </div>
 
 
