@@ -36,24 +36,20 @@
 
 <p>
     
+    
     ID: 
-    <?php echo $row['id']; ?><br> Unit Name:
+   <?php echo $row['id']; ?><br> Unit Name:
     <?php echo $row['unitname']; ?><br> Due Date:
     <?php echo $row['duedate']; ?><br> Assignment Name:
-    <?php echo $row['assignmentname']; ?><br> 
+    <?php echo $row['assignmentname']; ?><br> Priority:
+    <?php echo $row['priority']; ?><br> 
 
-    <br><a class="btn btn-warning"  href='update-work.php?id=<?php echo $row['id']; ?>'>Edit  <span class="glyphicon glyphicon-pencil"</span></a>
+    <br><a class="btn btn-warning" href='update-work.php?id=<?php echo $row['id']; ?>'>Edit  <span class="glyphicon glyphicon-pencil"</span></a>
+    
 </p>
 
 <hr>
 <?php }; //close the foreach
 ?>
 
-
-
-
-
-<?php include "templates/footer.php"; ?>
-
-
-                
+<?php include "templates/footer.php"; ?>                

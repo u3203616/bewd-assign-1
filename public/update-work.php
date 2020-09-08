@@ -16,6 +16,7 @@
               "unitname" => $_POST['unitname'],
               "duedate"  => $_POST['duedate'],
               "assignmentname"   => $_POST['assignmentname'],
+                "priority"   => $_POST['priority'],
               "date"   => $_POST['date'],
             ];
             
@@ -25,6 +26,7 @@
                         unitname = :unitname, 
                         duedate = :duedate, 
                         assignmentname = :assignmentname,  
+                         priority = :priority,
                         date = :date 
                     WHERE id = :id";
 
@@ -88,8 +90,9 @@
 
 <form method="post">
     
+    
     <label for="id">ID</label>
-    <input type="text" name="id" id="id" value="<?php echo escape($work['id']); ?>" >
+    <input type="text" readonly name="id" id="id" value="<?php echo escape($work['id']); ?>" >
     
    <br><label for="unitname">Unit Name:</label> 
     <input type="text" name="unitname" id="unitname" value="<?php echo escape($work['unitname']); ?>">
@@ -100,23 +103,12 @@
     <br><label for="assignmentname">Assignment Name:</label> 
     <input type="text" name="assignmentname" id="assignmentname" value="<?php echo escape($work['assignmentname']); ?>"> 
     
-    <br><input type="submit" name="submit" value="Done">
+    <br><label for="priority">Priority:</label> 
+    <input type="text" name="priority" id="priority" value="<?php echo escape($work['priority']); ?>"> 
+    
+    <br><input type="submit" name="submit" onclick="return confirm('Are you sure you want to make changes to this assignment?')" value="Done">
 
 </form>
 
 
-
-
-
 <?php include "templates/footer.php"; ?>
-
-
-
-
-
- 
-    
-   
-    
-   
-

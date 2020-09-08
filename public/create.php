@@ -19,11 +19,12 @@ if (isset($_POST['submit'])) {
             "unitname" => $_POST['unitname'], 
             "duedate" => $_POST['duedate'],
             "assignmentname" => $_POST['assignmentname'],
+            "priority" => $_POST['priority']
             
         );
         
        // THIRD: Turn the array into a SQL statement
-        $sql = "INSERT INTO works (unitname, duedate, assignmentname) VALUES (:unitname, :duedate, :assignmentname)";    
+        $sql = "INSERT INTO works (unitname, duedate, assignmentname, priority) VALUES (:unitname, :duedate, :assignmentname, :priority)";    
         
         // FOURTH: Now write the SQL to the database
         $statement = $connection->prepare($sql);
@@ -32,14 +33,14 @@ if (isset($_POST['submit'])) {
 	} catch(PDOException $error) {
         // if there is an error, tell us what it is
 		echo $sql . "<br>" . $error->getMessage();
+        
+        
 	}	
 }
 ?>
 
 
 <?php include "templates/header.php" ; ?>
-
-
 
 
 <?php if (isset($_POST['submit']) && $statement) { ?>
@@ -49,9 +50,6 @@ if (isset($_POST['submit'])) {
 <br>
 
 <?php } ?>
-
-
-
 
 
 <div class="container">
@@ -78,7 +76,7 @@ if (isset($_POST['submit'])) {
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label" >Assignment Name</label> 
+  <label  class="col-md-4 control-label" >Assignment Name</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
@@ -87,7 +85,6 @@ if (isset($_POST['submit'])) {
   </div>
 </div>
 
-  
   
 <!-- Text input-->
 
@@ -100,20 +97,30 @@ if (isset($_POST['submit'])) {
     </div>
   </div>
 </div>
+ 
+<!-- Text input-->
 
-
+<div class="form-group">
+  <label class="col-md-4 control-label">Priority</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-bell"></i></span>
+  <input  id="priority" name="priority" placeholder="Priority" class="form-control"  type="date">
+    </div>
+  </div>
+</div>
+    
+    
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
-    
-  <div class="col-md-4"><br>
+    <div class="col-md-4"><br>
     <button type="submit" name="submit" class="btn btn-success" >Add Item  <span class="glyphicon glyphicon-plus"></span></button>
   </div>
 </div>
-
 </fieldset>
 </form>
 </div>
-    <!-- /.container -->
+    
 
 <?php include "templates/footer.php"; ?>

@@ -48,7 +48,8 @@ if (isset($_POST['submit'])) {
     <?php echo $row['id']; ?><br> Unit Name:
     <?php echo $row['unitname']; ?><br> Due Date:
     <?php echo $row['duedate']; ?><br> Assignment Name:
-    <?php echo $row['assignmentname']; ?><br> 
+    <?php echo $row['assignmentname']; ?><br> Priority:
+    <?php echo $row['priority']; ?><br> 
 </p>
 <?php 
                                 
